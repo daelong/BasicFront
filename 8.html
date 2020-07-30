@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>갬블링 게임</title>
+	<style>
+		div {border: 1px solid purple;
+			background-color: pink;
+			width : 280px;
+			 }
+		div p { background-color: pink;
+			border: 0px;
+			font-size: 3em;
+			margin: 10px;
+			width: 60px;
+			height: 80px;
+			display: inline-block;
+			color: blue; }
+	</style>
+	<script>
+		function change(obj){
+			var i = Math.random()*3;
+			var n = Math.floor(i);
+			if(n == 0){
+				obj.innerHTML = "0";	
+			}else if(n == 1){
+				obj.innerHTML = "1";
+			}else if(n == 2){
+				obj.innerHTML = "2";
+			}
+		}
+		function check(obj1, obj2, obj3){
+			var i = Math.random()*3;
+			var n = Math.floor(i);
+			if(n == 0){
+				obj3.innerHTML = "0";	
+			}else if(n == 1){
+				obj3.innerHTML = "1";
+			}else if(n == 2){
+				obj3.innerHTML = "2";
+			}
+			if(obj1.innerHTML == obj2.innerHTML && obj1.innerHTML == obj3.innerHTML){
+				createDiv();			
+			}else{
+				createDiv2();
+			}
+		}
+		function createDiv(){
+			var obj = document.getElementById("parent");
+			var newDIV = document.createElement("div");
+			newDIV.innerHTML = "Success(click here to do again)";
+			newDIV.setAttribute("id", "myDiv");
+			newDIV.style.backgroundColor = "white";
+			newDIV.style.border = "0";
+			newDIV.style.color = "purple";
+			newDIV.addEventListener("click", function (){
+				location.reload();
+			});
+			obj.appendChild(newDIV);
+		}
+		function createDiv2(){
+			var obj = document.getElementById("parent");
+			var newDIV = document.createElement("div");
+			newDIV.innerHTML = "fail(click here to do again)";
+			newDIV.setAttribute("id", "myDiv");
+			newDIV.style.backgroundColor = "white";
+			newDIV.style.border = "0";
+			newDIV.style.color = "purple";
+			newDIV.addEventListener("click", function (){
+				location.reload();
+			});
+			obj.appendChild(newDIV);
+		}
+	</script>
+</head>
+<body id="parent">
+<h1>갬블링 게임</h1>
+<p>각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+<hr>
+<div>
+	<p id="firstP" onclick="change(this)">0</p>
+	<p id="secondP" onclick="change(this)">0</p>
+	<p id="thirdP"  onclick="check(firstP, secondP, thirdP)">0</p>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
-h1{ color: brown; text-align: center; }
-body{ background-color: aliceblue; }
-form{ background-color: pink; }
-footer{ background-color: orange; border-radius: 10px; }
+html, body { margin: 0; padding: 0; height: 100%; }
+header{ text-align: center; background-color: yellow;}
+form{ margin: 10px; padding : 10px; background-color: pink; }
+footer{ background-color: purple; border-radius: 10px; }
 p{ font: italic 0.9em consolas, sans-serif; text-indent: 1em; }
 span{color : blue; font-style: normal; font-size: 1.1em;}
