@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>마우스 클릭 연습</title>
+	<style>
+		table {	border: 1px solid blue;
+				border-collapse: collapse;}
+		table td { width: 50px; height: 50px; 
+				border: 1px solid blue;}
+	</style>
+	<script>
+		function imgUp(){
+		var images = document.getElementsByTagName("img");
+		var num = Math.random()*100;
+		var i = Math.floor(num);
+		images[i].src = "image/banana.png";
+		images[i].addEventListener("click", imgUp);
+		images[i].addEventListener("click", function (){
+			images[i].src = "";
+		});
+		}
+	</script>
+</head>
+<body onload="imgUp()">
+<h3>마우스 클릭 연습</h3>
+<hr>
+<table border="1">
+	<tbody>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+		<tr><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td><td><img src=""></td></tr>
+	</tbody>
+</table>
+<script>
+document.imges[];
+</script>
+</body>
+</html>
