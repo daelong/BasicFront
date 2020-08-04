@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fkldj</title>
+</head>
+<body>
+<h3>학점 별로 학생 수를 입력하면 파이 차트로 비율을 그립니다.</h3>
+<hr>
+<form>
+	A<input type="number" value="0" name="A">명
+	B<input type="number" value="0" name="A">명
+	C<input type="number" value="0" name="A">명<br>
+	D<input type="number" value="0" name="A">명
+	E<input type="number" value="0" name="A">명
+	<input type="button" value="차트그리기" onclick="chart()">
+</form>
+<canvas id="myCanvas" style="background-color:aliceblue" width="500" height="400"></canvas>
+<script>
+	var colors = ["blue", "green", "yellow", "magenta", "red"];
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+	function chart(){
+	//var num = [20, 10, 10, 5, 5];
+	var num = document.getElementsByName("A");
+	var sum = 0;
+	for(var i = 0; i < num.length; i++){
+		sum += num[i].value;
+	}
+
+	context.beginPath();
+	context.moveTo(150, 150);
+	var x = 0;
+	var y = 0;
+	
+	for(var i=0; i<num.length; i++){
+		context.beginPath();
+		context.moveTo(150, 150);
+		y += (num[i].value/sum)*2*Math.PI;
+		context.arc(150, 150, 50, x, y, false);
+		context.closePath();
+		context.fillStyle = colors[i];
+		context.fill();
+		context.stroke();
+		x = y;
+	}
+	/*context.beginPath();
+		context.moveTo(150, 150);
+		context.arc(150, 150, 50, 0, 1/5*2*Math.PI+1/5*2*Math.PI+2/5*2*Math.PI, false);
+		context.closePath();
+		context.fillStyle= colors[i];
+		context.fill();
+		context.stroke();*/
+		}
+</script>
+</body>
+</html>
