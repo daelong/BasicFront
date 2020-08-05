@@ -16,41 +16,42 @@
 </form>
 <canvas id="myCanvas" style="background-color:aliceblue" width="500" height="400"></canvas>
 <script>
+	var grades = ["A", "B", "C", "D", "E"];
 	var colors = ["blue", "green", "yellow", "magenta", "red"];
 	var canvas = document.getElementById("myCanvas");
 	var context = canvas.getContext("2d");
 	function chart(){
-	//var num = [20, 10, 10, 5, 5];
-	var num = document.getElementsByName("A");
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	var soo = document.getElementsByName("A");
+	var num = new Array();
 	var sum = 0;
-	for(var i = 0; i < num.length; i++){
-		sum += num[i].value;
+	for(var i = 0; i< soo.length; i++)	{
+		num[i] = parseInt(soo[i].value);
 	}
-
+	for(var i = 0; i < num.length; i++){
+		sum += num[i];
+	}
 	context.beginPath();
-	context.moveTo(150, 150);
+	context.moveTo(50, 50);
+	context.font = "20px Gothic";
+	context.fillStyle = "blue";
 	var x = 0;
 	var y = 0;
-	
+	for(var i = 0; i < num.length; i++){
+		context.fillText(grades[i] + "학점" + Math.floor((num[i]/sum)*100) + "%: "+ colors[i], 10, 50+i*20);
+	}
 	for(var i=0; i<num.length; i++){
 		context.beginPath();
-		context.moveTo(150, 150);
-		y += (num[i].value/sum)*2*Math.PI;
-		context.arc(150, 150, 50, x, y, false);
+		context.moveTo(250, 250);
+		y += (num[i]/sum)*2*Math.PI;
+		context.arc(250, 250, 100, x, y, false);
 		context.closePath();
 		context.fillStyle = colors[i];
 		context.fill();
-		context.stroke();
 		x = y;
 	}
-	/*context.beginPath();
-		context.moveTo(150, 150);
-		context.arc(150, 150, 50, 0, 1/5*2*Math.PI+1/5*2*Math.PI+2/5*2*Math.PI, false);
-		context.closePath();
-		context.fillStyle= colors[i];
-		context.fill();
-		context.stroke();*/
-		}
+
+	}
 </script>
 </body>
 </html>
